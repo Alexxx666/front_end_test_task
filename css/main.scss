@@ -1,0 +1,143 @@
+@import 'normalize.scss';
+@import 'defaults.scss';
+@import 'utils.scss';
+@import 'print.scss';
+
+.header {
+  padding: 1em;
+  border-bottom: 1px solid #000000;
+  
+  &_logo {
+    display: inline-block;
+    padding: .25em 1em;
+    color: #ffffff;
+    background-color: #464646;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+
+.article {
+  &_h1 {
+    color: #444444;
+    font-weight: bold;
+    font-size: 1.75em;
+  }
+  
+  &_h2 {
+    color: #000000;
+    font-family: 'Tinos', sans-serif;
+    font-size: 1.25em;
+  }
+  
+  &_p {
+    font-family: 'Tinos', sans-serif;
+  }
+  
+  &_headerWrapper {
+    display: flex;
+    padding: 0 1em;
+  }
+}
+
+.abstract,
+.content {
+  padding: 0 1em;
+}
+
+.authors {
+  list-style: none;
+  padding-left: 0;
+  
+  &_item {
+    display: inline;
+  }
+  
+  &_name {
+    color: #0000ff;
+  }
+}
+
+.images {
+  background-color: #fafafa;
+}
+
+.figure {
+  margin: 0 1em 1em 1em;
+  border-bottom: .125em solid #777777;
+  
+  &-last {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  
+  &_image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  &_caption {
+    padding: 1em 0;
+  }
+}
+
+.items {
+  background-color: #fafafa;
+  
+  &_heading {
+    color: #555555;
+    padding: .5em 0;
+    margin: 0 1em;
+    border-bottom: .125em solid #c0c0c0;
+  }
+  
+  &_list {
+    list-style: none;
+    padding: 1em;
+    margin: 0;
+  }
+  
+  &_item {
+    text-decoration: underline;
+    padding-bottom: .5em;
+  }
+}
+
+.backLink {
+  display: block;
+  padding: 1em 0 1em 1em;
+  margin-bottom: 1em;
+  color: #000000;
+  text-decoration: none;
+  border-bottom: .125em solid #979797;
+}
+
+.svgIcon {
+  width: 1.5em;
+  height: auto;
+}
+
+.sideMenu {
+  margin: 1em 0 0 1em;
+  
+  &_list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  &_item {
+    padding-bottom: .5em;
+  }
+}
+
+.hideVisually {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 0;
+    height: 100%;
+    overflow-x: hidden;
+    transition: .5s;
+}
