@@ -6,6 +6,9 @@
 .header {
   padding: 1em;
   border-bottom: 1px solid #000000;
+  position: relative;
+  transition: .5s;
+  left: 0;
   
   &_logo {
     display: inline-block;
@@ -37,6 +40,12 @@
   &_headerWrapper {
     display: flex;
     padding: 0 1em;
+  }
+  
+  &_main {
+    position: relative;
+    left: 0;
+    transition: .5s;
   }
 }
 
