@@ -4,11 +4,11 @@
 @import 'print.scss';
 
 .header {
+  position: relative;
+  left: 0;
   padding: 1em;
   border-bottom: 1px solid #000000;
-  position: relative;
-  transition: .5s;
-  left: 0;
+  transition: left .5s;
   
   &_logo {
     display: inline-block;
@@ -140,14 +140,13 @@
   }
 }
 
-.hideVisually {
+.mobileSliding {
     position: fixed;
     top: 0;
     right: -100%;
     z-index: 1;
-    height: 100%;
     width: 100%;
+    height: 100%;
     overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-    transition: .5s;
+    transition: right .5s;
 }
