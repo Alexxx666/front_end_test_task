@@ -5,9 +5,10 @@
 
 .header {
   position: relative;
+  box-sizing: border-box;
   left: 0;
   padding: 1em;
-  border-bottom: 1px solid #000000;
+  border-bottom: .125em solid #000000;
   transition: left .5s;
   
   &_logo {
@@ -19,6 +20,10 @@
     text-transform: uppercase;
   }
 }
+//
+//.page {
+//  height: calc(100vh - 2em - .5em - (1em * 1.4));
+//}
 
 .article {
   &_h1 {
@@ -47,6 +52,12 @@
     position: relative;
     left: 0;
     transition: .5s;
+  }
+  
+  @media only screen and (min-width: 60em) {
+    display: flex;
+    margin: 0 auto;
+    max-width: 60em;
   }
 }
 
@@ -121,6 +132,10 @@
   color: #000000;
   text-decoration: none;
   border-bottom: .125em solid #979797;
+  
+  @media only screen and (min-width: 60em) {
+    display: none;
+  }
 }
 
 .svgIcon {
@@ -130,6 +145,10 @@
 
 .sideMenu {
   margin: 1em 0 0 1em;
+  
+  @media only screen and (min-width: 60em) {
+    display: none !important;
+  }
   
   &_list {
     list-style: none;
@@ -151,3 +170,58 @@
     overflow-x: hidden;
     transition: right .5s;
 }
+
+.desktopMenu {
+  display: none;
+  
+  @media only screen and (min-width: 60em) {
+    display: block;
+    background-color: #fafafa;
+    padding-bottom: 1em;
+  }
+  
+  &_list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  &_item {
+    box-sizing: border-box;
+    width: 25%;
+  }
+  
+  &_link {
+    font-size: .75em;
+    text-decoration: none;
+    color: #000000;
+    box-sizing: border-box;
+    display: block;
+    padding: 1em 0;
+    
+    &-selected {
+      font-weight: bold;
+      border-bottom: .125em solid #777777;
+    }
+  }
+  
+  &_icon {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  &_title {
+    display: block;
+    text-align: center;
+  }
+}
+
+.sidebar {
+  @media only screen and (min-width: 60em) {
+      flex-basis: 18.75em;
+      flex-grow: 0;
+      flex-shrink: 0;
+  }
+}
+
