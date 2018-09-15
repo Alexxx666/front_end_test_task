@@ -71,7 +71,6 @@
         
         event.preventDefault();
         
-        
         // Remove highlight from all links
         Array.from(desktopMenuLinks).forEach(elem => {
           elem.classList.remove('desktopMenu_link-selected');  
@@ -97,22 +96,22 @@
                 document.documentElement.clientWidth ||
                 document.body.clientWidth;
     
-    // Getting calculated font size for html element - one em
+    // Calculate font size for html element - one em
     const style = window.getComputedStyle(document.documentElement, null).getPropertyValue('font-size');
     const em = parseFloat(style);
     
-    if (windowWidth < 60*em) {
+    if (windowWidth < 60 * em) {
       //mobile handler
     } else {
       //desktop handler
     }
   };
 
-  let doit;
+  let resizeTimer;
   
   window.addEventListener('resize', () => {
-    clearTimeout(doit);
-    doit = setTimeout(resizeHandler, 200);
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resizeHandler, 200);
   });
   
   const mq = window.matchMedia( "(min-width: 60em)" );

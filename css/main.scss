@@ -161,11 +161,6 @@ $black: #000000;
   }
 }
 
-.svgIcon {
-  width: 1.5em;
-  height: 1.5em;
-}
-
 .sideMenu {
   margin: 1em 0 0 1em;
   
@@ -180,6 +175,11 @@ $black: #000000;
   
   &_item {
     padding-bottom: .5em;
+  }
+  
+  &_icon {
+    width: 1.5em;
+    height: 1.5em;
   }
 }
 
@@ -232,6 +232,8 @@ $black: #000000;
   &_icon {
     display: block;
     margin: 0 auto;
+    width: 1em;
+    height: 1em;
   }
   
   &_title {
