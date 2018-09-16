@@ -231,9 +231,28 @@ $black: #000000;
   
   &_icon {
     display: block;
-    margin: 0 auto;
-    width: 1em;
+    width: 100%;
     height: 1em;
+    
+    background-position: center center;
+    background-size: 1em 1em;
+    background-repeat: no-repeat;
+    
+    &-figures {
+      background-image: url(../img/figures.svg);
+    }
+    
+    &-references {
+      background-image: url(../img/references.svg);
+    }
+    
+    &-related {
+      background-image: url(../img/related.svg);
+    }
+    
+    &-details {
+      background-image: url(../img/details.svg);
+    }
   }
   
   &_title {
@@ -242,6 +261,22 @@ $black: #000000;
     color: $black;
     font-size: .75em;
   }
+}
+
+.desktopMenu_link-selected .desktopMenu_icon-figures {
+  background-image: url(../img/figures_bold.svg);
+}
+
+.desktopMenu_link-selected .desktopMenu_icon-references {
+  background-image: url(../img/references_bold.svg);
+}
+
+.desktopMenu_link-selected .desktopMenu_icon-related {
+  background-image: url(../img/related_bold.svg);
+}
+
+.desktopMenu_link-selected .desktopMenu_icon-details {
+  background-image: url(../img/details_bold.svg);
 }
 
 .sidebar {
@@ -269,6 +304,7 @@ $black: #000000;
   overflow-y: scroll;
 }
 
+// Add ability to detect breakpoint in JS
 body:before {
   content: "mobile";
   display: none;
