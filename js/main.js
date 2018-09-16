@@ -61,7 +61,7 @@
     // Hide right content blocks except for the first one
     Array.from(menuBlocks).forEach((item, index) => {
       if (index !== 0) {
-        item.classList.add('visuallyhidden');
+        item.classList.add('hidden');
       }
     });
     
@@ -83,8 +83,8 @@
         // and hide it otherwise
         Array.from(menuBlocks).forEach((contentItem, contentIndex) => {
           index === contentIndex
-            ? contentItem.classList.remove('visuallyhidden')
-            : contentItem.classList.add('visuallyhidden');
+            ? contentItem.classList.remove('hidden')
+            : contentItem.classList.add('hidden');
         });
         
       });
