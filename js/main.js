@@ -16,7 +16,7 @@
     Array.from(menuBlocks).forEach((item) => {
       item.classList.add('mobileSliding');
     });
-
+    
     Array.from(menuLinks).forEach((item, index) => {
       item.addEventListener('click', (event) => {
         event.preventDefault();
@@ -91,19 +91,24 @@
     });
   }
 
+  const breakpoint = {};
+  breakpoint.refreshValue = function () {
+    this.value = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content').replace(/\"/g, '');
+  };
+  
+  breakpoint.refreshValue();
+  
   const resizeHandler = () => {
-    const windowWidth = window.innerWidth ||
-                document.documentElement.clientWidth ||
-                document.body.clientWidth;
+    const previousScreen = breakpoint.value;
+    breakpoint.refreshValue();
+    const currentScreen = breakpoint.value;
     
-    // Calculate font size for html element - one em
-    const style = window.getComputedStyle(document.documentElement, null).getPropertyValue('font-size');
-    const em = parseFloat(style);
-    
-    if (windowWidth < 60 * em) {
-      //mobile handler
-    } else {
-      //desktop handler
+    if (previousScreen === 'mobile' && currentScreen === 'desktop') {
+      // Handler for switching from mobile to desktop
+      location.reload(); 
+    } else if (previousScreen === 'desktop' && currentScreen === 'mobile') {
+      // Handler for switching from desktop to mobile
+      location.reload(); 
     }
   };
 

@@ -268,3 +268,14 @@ $black: #000000;
   height: $sidebarBlockHeight;
   overflow-y: scroll;
 }
+
+body:before {
+  content: "mobile";
+  display: none;
+}
+
+@media (min-width: 60em) {
+  body:before {
+    content: "desktop";
+  }
+}
