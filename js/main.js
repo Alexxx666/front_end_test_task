@@ -14,13 +14,13 @@
     const backLinks = document.getElementsByClassName('backLink');
 
     // Move items that are revealed with menu clicks to the right of viewport
-    Array.from(menuBlocks).forEach((item) => {
+    Array.prototype.slice.call(menuBlocks).forEach((item) => {
       item.classList.add('mobileSliding');
     });
     
     // Event listeners for menu clicks - 
     // main content is positioned to the left of the screen and right block slides in
-    Array.from(menuLinks).forEach((item, index) => {
+    Array.prototype.slice.call(menuLinks).forEach((item, index) => {
       item.addEventListener('click', (event) => {
         event.preventDefault();
         document.getElementById(blocksIds[index]).style.right = '0';
@@ -35,7 +35,7 @@
 
     // Handler for back links
     // - reverses what has been done via menu click
-    Array.from(backLinks).forEach((item, index) => {
+    Array.prototype.slice.call(backLinks).forEach((item, index) => {
         item.addEventListener('click', (event) => {
         event.preventDefault();
         document.getElementsByClassName('article_main')[0].classList.remove('visuallyhidden');
@@ -58,27 +58,27 @@
     
     // Make right image and content blocks scrollable
     sidebarImages.classList.add('items-scrollable');
-    Array.from(sidebarItemBlocks).forEach(item => {
+    Array.prototype.slice.call(sidebarItemBlocks).forEach(item => {
       item.classList.add('items-scrollable');
     });
     
     mainArticleContent.classList.add('article-scrollable');
     
     // Hide right content blocks except for the first one
-    Array.from(menuBlocks).forEach((item, index) => {
+    Array.prototype.slice.call(menuBlocks).forEach((item, index) => {
       if (index !== 0) {
         item.classList.add('hidden');
       }
     });
     
     // Adding click listeners for right top menu links
-    Array.from(desktopMenuLinks).forEach((item, index) => {
+    Array.prototype.slice.call(desktopMenuLinks).forEach((item, index) => {
       item.addEventListener('click', (event) => {
         
         event.preventDefault();
         
         // Remove highlight from all links
-        Array.from(desktopMenuLinks).forEach(elem => {
+        Array.prototype.slice.call(desktopMenuLinks).forEach(elem => {
           elem.classList.remove('desktopMenu_link-selected');  
         }); 
         
@@ -87,7 +87,7 @@
         
         // Display piece of content if its index is equal to the index of clicked link
         // and hide it otherwise
-        Array.from(menuBlocks).forEach((contentItem, contentIndex) => {
+        Array.prototype.slice.call(menuBlocks).forEach((contentItem, contentIndex) => {
           index === contentIndex
             ? contentItem.classList.remove('hidden')
             : contentItem.classList.add('hidden');
