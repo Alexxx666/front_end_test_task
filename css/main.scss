@@ -318,6 +318,7 @@ $sidebarBlockHeight: calc(100% - 2em - 1.5em - (.75em * 1.4) - 1em);
     flex-shrink: 0;
     height: $contentHeight;
     background-color: $color-gray-02;
+    z-index: 1;
     // Fix for scrollbar issue in Chrome on MacOS
     -webkit-transform: translate3d(0, 0, 0);
   }
