@@ -1,15 +1,9 @@
 @import 'normalize.scss';
 @import 'defaults.scss';
-@import 'utils.scss';
-@import 'print.scss';
 
-// 100vh minus height of the top header
-$contentHeight: calc(100vh - 2em - .5em - 1.4em);
-
-// content height minus height of nav menu
-$sidebarBlockHeight: calc(100% - 2em - 1.5em - (.75em * 1.4) - 1em);
-
-//Colors
+/*
+ * Colors
+*/
 
 $white: #ffffff;
 
@@ -23,6 +17,10 @@ $color-gray-06: #979797;
 $color-blue-01: #0000ff;
 
 $black: #000000;
+
+/*
+ * Top header with logo
+*/
 
 .header {
   position: relative;
@@ -45,6 +43,10 @@ $black: #000000;
     text-transform: uppercase;
   }
 }
+
+/*
+ * Main article styles
+*/
 
 .article {
   &_h1 {
@@ -101,6 +103,10 @@ $black: #000000;
   }
 }
 
+/*
+ * Block with images
+*/
+
 .images {
   background-color: $color-gray-02;
 }
@@ -125,6 +131,10 @@ $black: #000000;
     font-size: .75em;
   }
 }
+
+/*
+ * Three right blocks with content
+*/
 
 .items {
   background-color: $color-gray-02;
@@ -164,6 +174,10 @@ $black: #000000;
   }
 }
 
+/*
+ * Mobile menu
+*/
+
 .sideMenu {
   margin: 1em 0 0 1em;
   
@@ -198,6 +212,10 @@ $black: #000000;
   
     transition: right .5s;
 }
+
+/*
+ * Right desktop menu
+*/
 
 .desktopMenu {
   display: none;
@@ -282,6 +300,16 @@ $black: #000000;
 .desktopMenu_link-selected .desktopMenu_icon-details {
   background-position: -112px 0;
 }
+
+/*
+ * Desktop sidebar styles and utility classes to implement scrolling
+*/
+
+// 100vh minus height of the top header
+$contentHeight: calc(100vh - 2em - .5em - 1.4em);
+
+// content height minus height of nav menu
+$sidebarBlockHeight: calc(100% - 2em - 1.5em - (.75em * 1.4) - 1em);
 
 .sidebar {
   @media only screen and (min-width: 60em) {

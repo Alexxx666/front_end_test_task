@@ -13,29 +13,35 @@
     const menuLinks = document.getElementsByClassName('sideMenu_link');
     const backLinks = document.getElementsByClassName('backLink');
 
+    // Move items that are revealed with menu clicks to the right of viewport
     Array.from(menuBlocks).forEach((item) => {
       item.classList.add('mobileSliding');
     });
     
+    // Event listeners for menu clicks - 
+    // main content is positioned to the left of the screen and right block slides in
     Array.from(menuLinks).forEach((item, index) => {
       item.addEventListener('click', (event) => {
         event.preventDefault();
         document.getElementById(blocksIds[index]).style.right = '0';
         document.getElementById('page_top').style.left = '-100%';
         document.getElementsByClassName('article_main')[0].style.left = '-100%';
+        // Hide main content after animation is complete to not spoil the scroll
         setTimeout(() => {
           document.getElementsByClassName('article_main')[0].classList.add('visuallyhidden');
         }, 500);
       });
     });
 
+    // Handler for back links
+    // - reverses what has been done via menu click
     Array.from(backLinks).forEach((item, index) => {
         item.addEventListener('click', (event) => {
         event.preventDefault();
+        document.getElementsByClassName('article_main')[0].classList.remove('visuallyhidden');
         document.getElementById(blocksIds[index]).style.right = '-100%';
         document.getElementById('page_top').style.left = '0';
         document.getElementsByClassName('article_main')[0].style.left = '0';
-        document.getElementsByClassName('article_main')[0].classList.remove('visuallyhidden');
       });
     });
   }
@@ -91,6 +97,7 @@
     });
   }
 
+  // Class that detects and stores css breakpoint
   const breakpoint = {};
   breakpoint.refreshValue = function () {
     this.value = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content').replace(/\"/g, '');
@@ -112,6 +119,7 @@
     }
   };
 
+  // Resize handler is called only after 200ms has passed
   let resizeTimer;
   
   window.addEventListener('resize', () => {
@@ -119,6 +127,7 @@
     resizeTimer = setTimeout(resizeHandler, 200);
   });
   
+  // Detect which screen we're on and call corresponding handler
   const mq = window.matchMedia( "(min-width: 60em)" );
   
   if (!mq.matches) {
