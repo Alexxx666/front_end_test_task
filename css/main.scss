@@ -286,6 +286,7 @@ $black: #000000;
     flex-shrink: 0;
     height: $contentHeight;
     background-color: $color-gray-02;
+    z-index: 1;
   }
 }
 
@@ -297,6 +298,9 @@ $black: #000000;
 .article-scrollable {
   height: $contentHeight;
   overflow-y: scroll;
+  // This is to hide the scrollbar
+  margin-right: -100vw;
+  padding-right: 100vw;
 }
 
 .items-scrollable {
