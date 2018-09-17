@@ -234,27 +234,28 @@ $black: #000000;
   
   &_icon {
     display: block;
-    width: 100%;
-    height: 1em;
+    width: 16px;
+    height: 16px;
+    margin: 0 auto;
     
-    background-position: center center;
-    background-size: 1em 1em;
+    background-size: auto 100%;
     background-repeat: no-repeat;
+    background-image: url(../img/icon_sprite.svg);
     
     &-figures {
-      background-image: url(../img/figures.svg);
+      background-position: 0 0;
     }
     
     &-references {
-      background-image: url(../img/references.svg);
+      background-position: -32px 0;
     }
     
     &-related {
-      background-image: url(../img/related.svg);
+      background-position: -64px 0;
     }
     
     &-details {
-      background-image: url(../img/details.svg);
+      background-position: -96px 0;
     }
   }
   
@@ -267,19 +268,19 @@ $black: #000000;
 }
 
 .desktopMenu_link-selected .desktopMenu_icon-figures {
-  background-image: url(../img/figures_bold.svg);
+  background-position: -16px 0;
 }
 
 .desktopMenu_link-selected .desktopMenu_icon-references {
-  background-image: url(../img/references_bold.svg);
+  background-position: -48px 0;
 }
 
 .desktopMenu_link-selected .desktopMenu_icon-related {
-  background-image: url(../img/related_bold.svg);
+  background-position: -80px 0;
 }
 
 .desktopMenu_link-selected .desktopMenu_icon-details {
-  background-image: url(../img/details_bold.svg);
+  background-position: -112px 0;
 }
 
 .sidebar {
