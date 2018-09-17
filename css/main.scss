@@ -30,7 +30,7 @@ $black: #000000;
   
   box-sizing: border-box;
   padding: 1em;
-  border-bottom: .125em solid $black;
+  border-bottom: .0625em solid $black;
   
   transition: left .5s;
   
@@ -107,7 +107,7 @@ $black: #000000;
 
 .figure {
   margin: 0 1em 1em 1em;
-  border-bottom: .125em solid $color-gray-03;
+  border-bottom: .0625em solid $color-gray-03;
   
   &-last {
     margin-bottom: 0;
@@ -152,9 +152,9 @@ $black: #000000;
 
 .backLink {
   display: block;
-  padding: 1em 0 1em 1em;
+  padding: 1.25em 0 1.25em 1em;
   margin-bottom: 1em;
-  border-bottom: .125em solid $color-gray-06;
+  border-bottom: .0625em solid $color-gray-06;
   
   color: $black;
   text-decoration: none;
